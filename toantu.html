@@ -5,15 +5,44 @@
     <title>toantu</title>
 </head>
 <body>
+<table>
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+    </tr>
+    <tr>
+        <th><input id="my" type="number" name="number"></th>
+        <th><select id="frommoney">
+            <option value="USD">USD</option>
+            <option value="VND">VND</option>
+        </select></th>
+        <th><select id="tomoney">
+            <option value="USD">USD</option>
+            <option value="VND">VND</option>
+        </select></th>
+        <th>
+            <button onclick="convert()">Convert</button>
+        </th>
+    </tr>
+    <tr><p style="color: red" id="result"></p></tr>
+</table>
 <script>
-  inputvatly = prompt("Enter the width");
-  inputhaohoc = prompt("Enter the height");
-  inputsinhhoc = prompt("Enter the height");
-  let vatly = parseFloat(inputvatly);
-  let hoahoc = parseFloat(inputhaohoc);
-  let sinhhoc = parseFloat(inputsinhhoc);
-  let area = (vatly+hoahoc+sinhhoc)/3;
-  document.write("The area is: " + area);
+    function convert() {
+        var giatri = document.getElementById("my").value;
+        var giatri1 = document.getElementById("frommoney").value;
+        var giatri2 = document.getElementById("tomoney").value;
+        var result = 0;
+        if (giatri1 == "USD" && giatri2 == "VND") {
+            result = parseFloat(giatri) * 23000;
+        } else if (giatri1 == "VND" && giatri2 == "USD") {
+            result = parseFloat(giatri) / 23000;
+        } else {
+            result = giatri;
+        }
+        document.getElementById("result").innerHTML = result;
+
+    }
 </script>
 
 </body>
