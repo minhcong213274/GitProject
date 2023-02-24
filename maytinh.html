@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>computer</title>
+</head>
+<body>
+<input id="my" type="number" name="number"> <input id="my1" type="number" name="number">
+<button id="cong" onclick="addtwonumber()">Cộng</button>
+<button id="tru" onclick="addonenumber()">Trừ</button>
+<h2>Result:</h2>
+<p id="result">Đây là kết quả</p>
+<script>
+    function addtwonumber() {
+        var giatri = parseFloat(document.getElementById("my").value);
+        var giatri2 = parseFloat(document.getElementById("my1").value);
+        var result = giatri + giatri2;
+        document.getElementById("result").innerHTML = result;
+    }
+    function addonenumber(){
+        var giatri = parseFloat(document.getElementById("my").value);
+        var giatri2 = parseFloat(document.getElementById("my1").value);
+        var result = giatri - giatri2;
+        document.getElementById("result").innerHTML = result;
+    }
+</script>
+</body>
+</html>
